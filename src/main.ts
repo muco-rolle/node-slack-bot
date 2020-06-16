@@ -40,7 +40,8 @@ const bootstrap = async () => {
                                 type: 'section',
                                 text: {
                                     type: 'mrkdwn',
-                                    text: 'Welcome to my bot',
+                                    text:
+                                        "Hello, this is the bot what can I help you? I can't respond you now please add more events.",
                                 },
                             },
                             {
