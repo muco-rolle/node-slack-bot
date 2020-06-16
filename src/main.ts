@@ -1,17 +1,22 @@
 import { App } from '@slack/bolt';
+import { env } from './utils/env';
 
 const bootstrap = async () => {
-    const app = new App({
-        signingSecret: '9cff884e9b4969968b68be87864aafff',
-        token:
-            'xoxp-1170456475879-1183820171189-1170827584071-2b3afa4a5dea889c7d6126ebfff5b2d0',
-    });
+    try {
+        const app = new App({
+            signingSecret: env.get('slack_signing_secret'),
+            token: env.get('slack_token'),
+        });
 
-    // listen to events
+        // listen to events
 
-    app.start(4000);
+        app.start(4000);
 
-    console.log('⚡️ node-bot app is running!');
+        console.log();
+        console.log('⚡️ node-bot app is running on http://localhost:4000');
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 bootstrap();

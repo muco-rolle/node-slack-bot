@@ -4,13 +4,14 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "start:dev": "run-p tsc:w dev",
+        "start:dev": "NODE_ENV=development run-p tsc:w dev",
         "tsc:w": "tsc -w",
         "dev": "nodemon"
     },
     "dependencies": {
         "@slack/bolt": "^2.1.1",
-        "dotenv": "^8.2.0"
+        "dotenv": "^8.2.0",
+        "dotenv-expand": "^5.1.0"
     },
     "devDependencies": {
         "@types/dotenv": "^8.2.0",
